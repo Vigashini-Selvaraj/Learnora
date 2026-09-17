@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Learnora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar-footer.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <main>
+        <section class="contact-hero-redesign">
+            <div class="contact-hero-bg-anim"></div>
+            <div class="container hero-content-wrapper">
+                <div class="hero-text-block">
+                    <span class="hero-eyebrow">GET IN TOUCH</span>
+                    <h1>We're here to <span>help you</span>.</h1>
+                    <p>Have a question about our courses, tutoring, or partnerships? Reach out to our team directly.</p>
+                </div>
+                <div class="hero-quick-cards">
+                    <div class="quick-card">
+                        <div class="quick-card-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <h3>Email Us</h3>
+                        <p>Drop us a line anytime.</p>
+                        <a href="mailto:hello@learnora.com">hello@learnora.com</a>
+                    </div>
+                    <div class="quick-card">
+                        <div class="quick-card-icon"><i class="fa-solid fa-phone"></i></div>
+                        <h3>Call Us</h3>
+                        <p>Mon-Fri, 9am to 6pm.</p>
+                        <a href="tel:+918001234567">+91 800 123 4567</a>
+                    </div>
+                    <div class="quick-card">
+                        <div class="quick-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <h3>Visit Us</h3>
+                        <p>Learnora Education Hub</p>
+                        <span>Chennai, Tamil Nadu</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="form-map-split section-padding bg-light">
+            <div class="container">
+                <div class="split-layout">
+                    <div class="contact-form-wrapper">
+                        <div class="form-header">
+                            <h2>Send a Message</h2>
+                            <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                        </div>
+                        <form class="learnora-form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" placeholder="John" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" placeholder="Doe" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="john@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <select id="subject" required>
+                                    <option value="" disabled selected>Select a topic...</option>
+                                    <option value="courses">Course Inquiry</option>
+                                    <option value="tutoring">Private Tutoring</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" rows="5" placeholder="How can we help you?" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary form-submit-btn">
+                                Send Message <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="map-container-wrapper">
+                        <div class="map-floating-box">
+                            <iframe 
+                                src="https://www.google.com/maps?q=Chennai%2C%20Tamil%20Nadu%2C%20India&output=embed" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade" 
+                                title="Learnora location in Chennai">
+                            </iframe>
+                            <div class="map-badge">
+                                <div class="pulse-dot"></div>
+                                <span>Learnora HQ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="support-grid-section section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">How else can we help?</h2>
+                    <p class="section-subtitle">We offer dedicated channels to get you the right support faster.</p>
+                </div>
+                <div class="support-cards-grid">
+                    <div class="support-action-card">
+                        <div class="action-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                        <h3>Tutor Support</h3>
+                        <p>Get direct guidance from your assigned tutors.</p>
+                        <a href="#" class="action-link">Contact Tutor &rarr;</a>
+                    </div>
+                    <div class="support-action-card">
+                        <div class="action-icon"><i class="fa-solid fa-headset"></i></div>
+                        <h3>Technical Support</h3>
+                        <p>Having trouble accessing courses? We're here.</p>
+                        <a href="#" class="action-link">Open Ticket &rarr;</a>
+                    </div>
+                    <div class="support-action-card">
+                        <div class="action-icon"><i class="fa-solid fa-handshake"></i></div>
+                        <h3>Partnerships</h3>
+                        <p>Interested in collaborating with Learnora?</p>
+                        <a href="#" class="action-link">Partner with us &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-faq-section section-padding bg-light">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Find quick answers to common questions.</p>
+                </div>
+                <div class="faq-container" id="contact-faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How quickly do you respond to emails?
+                            <i class="fa-solid fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We typically respond to all inquiries within 24 hours during standard business days (Monday-Friday).</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Can I schedule an in-person meeting?
+                            <i class="fa-solid fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, you can schedule an appointment to visit our Education Hub in Chennai. Please use the contact form above to request a meeting.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Do you offer support on weekends?
+                            <i class="fa-solid fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our main support desk operates Monday to Saturday. However, critical technical issues are monitored 24/7.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="container text-center">
+                <h2 class="cta-title">Ready to start learning?</h2>
+                <p class="cta-desc">Join thousands of students and transform your future today.</p>
+                <div class="cta-buttons">
+                    <a href="courses.html" class="btn btn-primary">Browse Courses</a>
+                    <a href="about.html" class="btn btn-secondary" style="color: white; border-color: white;">Learn More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/main.js"></script>
+    <script src="js/components.js"></script>
+</body>
+</html>

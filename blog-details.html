@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Details | Learnora</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/navbar-footer.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+<body>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <main class="blog-details-main">
+        <!-- Javascript will inject exactly 7 semantic sections here based on the URL ID -->
+        <div id="dynamic-blog-content">
+            <div class="container text-center" style="padding: 100px 0;">
+                <h1 style="color: var(--main-text);">Loading Article...</h1>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/components.js"></script>
+    
+    <!-- Dynamic Blog Details Logic -->
+    <script>
+        // Expanded Static Blog Data Store (10 Articles with full 7-section details)
+        const blogData = {
+            1: {
+                title: "The Future of Personalized Learning: How Technology is Shaping Education",
+                category: "Technology",
+                author: "Sarah Jenkins",
+                authorRole: "Head of Innovation",
+                authorBio: "Sarah is a former high school teacher turned EdTech researcher. She focuses on integrating AI to create personalized learning environments.",
+                authorImg: "images/author_david_chen.jpg",
+                date: "Oct 15, 2026",
+                readTime: "8 min read",
+                image: "images/blog_study_env.jpg",
+                intro: "Discover the transformative power of modern educational tools and how Learnora integrates these technologies to deliver hyper-personalized learning experiences for every student.",
+                content: `
+                    <h2>The Shift from Traditional to Digital</h2>
+                    <p>For decades, the standard classroom model was a one-size-fits-all approach. Today, artificial intelligence and adaptive learning algorithms are changing the landscape completely. Students no longer have to struggle with a pace that is too fast or get bored with one that is too slow.</p>
+                    
+                    <h3>Key Technologies in Modern Education</h3>
+                    <ul>
+                        <li><strong>AI Tutors:</strong> Available 24/7 to answer questions and provide hints.</li>
+                        <li><strong>Adaptive Assessments:</strong> Tests that adjust difficulty based on the student's performance.</li>
+                        <li><strong>Data Analytics:</strong> Dashboards that allow parents and teachers to track real-time progress.</li>
+                    </ul>
+
+                    <h2>Learnora's Approach</h2>
+                    <p>At Learnora, we don't just rely on technology; we combine it with expert human guidance. Our intelligent platform identifies knowledge gaps, and our experienced tutors bridge them.</p>
+                    
+                    <blockquote>"Technology will never replace great teachers, but technology in the hands of great teachers is transformational."</blockquote>
+                    
+                    <p>By leveraging these tools, we ensure that every student's learning journey is perfectly mapped to their unique strengths and weaknesses.</p>
+                `,
+                keyTakeaways: [
+                    "AI allows for customized learning paths for every student.",
+                    "Data tracking empowers both parents and teachers.",
+                    "Human mentorship combined with technology yields the highest success rates.",
+                    "Adaptive testing prevents student frustration."
+                ]
+            },
+            2: {
+                title: "The Ultimate Last-Minute Exam Preparation Guide",
+                category: "Exam Prep",
+                author: "David Chen",
+                authorRole: "Senior Tutor",
+                authorBio: "David has over 10 years of experience helping students ace standardized testing and overcome exam anxiety.",
+                authorImg: "images/author_emily_roberts.jpg",
+                date: "Oct 5, 2026",
+                readTime: "7 min read",
+                image: "images/blog_online_learning.jpg",
+                intro: "Exams are just around the corner! Here is exactly what you need to focus on to maximize your marks in the remaining weeks.",
+                content: `
+                    <h2>Stop Rereading, Start Retrieving</h2>
+                    <p>The biggest mistake students make during the final weeks is simply re-reading their textbooks. Science proves that active recall is far superior.</p>
+
+                    <h3>Top Strategies</h3>
+                    <ul>
+                        <li><strong>Practice Papers:</strong> Do them under timed conditions.</li>
+                        <li><strong>Feynman Technique:</strong> Explain complex concepts aloud to a friend or a wall.</li>
+                        <li><strong>Sleep:</strong> Never pull an all-nighter before the exam. Your brain needs sleep to consolidate memory.</li>
+                    </ul>
+                `,
+                keyTakeaways: [
+                    "Active recall is significantly better than passive reading.",
+                    "Simulate exam conditions using past papers.",
+                    "Do not sacrifice sleep for study time.",
+                    "Teach concepts to others to solidify your own understanding."
+                ]
+            },
+            3: {
+                title: "How to Create the Perfect Study Environment at Home",
+                category: "For Parents",
+                author: "Emily Roberts",
+                authorRole: "Child Psychology Expert",
+                authorBio: "Emily specializes in student psychology and helps families design healthy, productive home environments.",
+                authorImg: "images/author_david_chen.jpg",
+                date: "Sep 28, 2026",
+                readTime: "4 min read",
+                image: "images/blog_study_env.jpg",
+                intro: "Your child's physical environment plays a massive role in their ability to concentrate. Learn how to set up a distraction-free study zone.",
+                content: `
+                    <h2>Lighting and Ergonomics</h2>
+                    <p>Natural light is the best. If that's not possible, ensure the desk is brightly lit to prevent eye strain. Invest in a comfortable, ergonomic chair to maintain good posture.</p>
+
+                    <h2>Digital Distractions</h2>
+                    <p>Phones should be kept in another room during deep study sessions. Use website blockers on laptops to prevent mindless scrolling during study time.</p>
+                `,
+                keyTakeaways: [
+                    "Remove phones from the study room.",
+                    "Invest in good lighting and an ergonomic chair.",
+                    "Keep the desk free of visual clutter.",
+                    "Establish clear boundaries during study hours."
+                ]
+            },
+            4: {
+                title: "Announcing Our New Intensive Weekend Batches",
+                category: "Center News",
+                author: "Learnora Admin",
+                authorRole: "Admissions Team",
+                authorBio: "The Learnora Admissions team is dedicated to helping students find the perfect learning schedule.",
+                authorImg: "images/author_david_chen.jpg",
+                date: "Sep 20, 2026",
+                readTime: "2 min read",
+                image: "images/blog_tech_interview.jpg",
+                intro: "Due to popular demand, Learnora is officially opening weekend intensive batches for Grade 10 and 12 students.",
+                content: `
+                    <h2>What to Expect</h2>
+                    <p>These batches are designed for students who cannot attend weekday sessions. They feature condensed, high-yield lectures and intensive mock testing.</p>
+
+                    <p>Enrollment opens next Monday. Spaces are limited, so reserve your spot early!</p>
+                `,
+                keyTakeaways: [
+                    "Weekend batches are now available for grades 10 and 12.",
+                    "Classes focus on high-yield exam preparation.",
+                    "Enrollment opens on Monday."
+                ]
+            },
+            5: {
+                title: "Preparing for Technical Interviews",
+                category: "Career",
+                author: "Michael Chang",
+                authorRole: "Tech Career Coach",
+                authorBio: "Michael is a former FAANG engineer who now coaches students on cracking coding interviews.",
+                authorImg: "images/author_emily_roberts.jpg",
+                date: "Oct 18, 2026",
+                readTime: "10 min read",
+                image: "images/author_david_chen.jpg",
+                intro: "Landing a top-tier tech job requires solid fundamentals. We break down the exact path to passing technical interviews.",
+                content: `
+                    <h2>Mastering Data Structures</h2>
+                    <p>You cannot pass a technical interview without a solid understanding of arrays, hash maps, trees, and graphs. Practice these daily.</p>
+                    <h2>Communication is Key</h2>
+                    <p>Interviewers want to see how you think. Talk through your logic out loud before writing a single line of code.</p>
+                `,
+                keyTakeaways: [
+                    "Master core data structures and algorithms.",
+                    "Always communicate your thought process out loud.",
+                    "Start with a brute force solution, then optimize.",
+                    "Do mock interviews to simulate pressure."
+                ]
+            },
+            6: {
+                title: "Online Learning Strategies",
+                category: "Education",
+                author: "Emily Roberts",
+                authorRole: "Child Psychology Expert",
+                authorBio: "Emily specializes in student psychology and helps families design healthy, productive home environments.",
+                authorImg: "images/author_david_chen.jpg",
+                date: "Oct 20, 2026",
+                readTime: "6 min read",
+                image: "images/author_emily_roberts.jpg",
+                intro: "Virtual learning is here to stay. Discover the best strategies to stay motivated and engaged in an online environment.",
+                content: `
+                    <h2>Treat it Like a Real Classroom</h2>
+                    <p>Wake up at the same time, get dressed, and sit at a proper desk. Do not attend classes from your bed.</p>
+                    <h2>Participate Actively</h2>
+                    <p>Turn your camera on. Ask questions in the chat. The more you interact, the less likely you are to zone out.</p>
+                `,
+                keyTakeaways: [
+                    "Never study in bed.",
+                    "Keep your camera on to force engagement.",
+                    "Use the Pomodoro technique to maintain focus.",
+                    "Take regular screen breaks to rest your eyes."
+                ]
+            },
+            7: {
+                title: "Skills Every Student Should Develop",
+                category: "Learning",
+                author: "Sarah Jenkins",
+                authorRole: "Head of Innovation",
+                authorBio: "Sarah is a former high school teacher turned EdTech researcher. She focuses on integrating AI to create personalized learning environments.",
+                authorImg: "images/author_david_chen.jpg",
+                date: "Oct 22, 2026",
+                readTime: "5 min read",
+                image: "images/blog_online_learning.jpg",
+                intro: "Beyond the standard curriculum, these are the top soft skills every modern student must develop before entering the workforce.",
+                content: `
+                    <h2>Adaptability</h2>
+                    <p>The world is changing faster than ever. The ability to learn new tools quickly is more important than knowing one tool perfectly.</p>
+                    <h2>Emotional Intelligence</h2>
+                    <p>Being able to work well in teams, manage stress, and understand others' perspectives is critical for long-term career success.</p>
+                `,
+                keyTakeaways: [
+                    "Adaptability is the most important 21st-century skill.",
+                    "Emotional intelligence often outweighs technical skills.",
+                    "Time management is critical for university success.",
+                    "Learn to communicate complex ideas simply."
+                ]
+            },
+            8: {
+                title: "How to Memorize Anything Efficiently",
+                category: "Study Tips",
+                author: "David Chen",
+                authorRole: "Senior Tutor",
+                authorBio: "David has over 10 years of experience helping students ace standardized testing and overcome exam anxiety.",
+                authorImg: "images/author_emily_roberts.jpg",
+                date: "Nov 2, 2026",
+                readTime: "8 min read",
+                image: "images/author_emily_roberts.jpg",
+                intro: "Use spaced repetition and active recall to build long-lasting memory for your hardest subjects.",
+                content: `
+                    <h2>The Forgetting Curve</h2>
+                    <p>Without review, you will forget 70% of what you learned within 24 hours. Spaced repetition combats this by forcing you to review material right as you are about to forget it.</p>
+                `,
+                keyTakeaways: [
+                    "Use flashcard software like Anki for spaced repetition.",
+                    "Review material 1 day, 3 days, and 7 days after learning it.",
+                    "Connect new information to things you already know."
+                ]
+            },
+            9: {
+                title: "Top 5 Productivity Apps for Students",
+                category: "Technology",
+                author: "Emily Roberts",
+                authorRole: "Child Psychology Expert",
+                authorBio: "Emily specializes in student psychology and helps families design healthy, productive home environments.",
+                authorImg: "images/blog_tech_interview.jpg",
+                date: "Nov 1, 2026",
+                readTime: "4 min read",
+                image: "images/blog_tech_interview.jpg",
+                intro: "Our top tech picks for staying organized, focused, and productive throughout the entire academic semester.",
+                content: `
+                    <h2>Notion for Notes</h2>
+                    <p>Notion provides an incredible all-in-one workspace for databases, calendars, and class notes.</p>
+                    <h2>Forest for Focus</h2>
+                    <p>Forest gamifies the Pomodoro technique by letting you plant virtual trees that die if you close the app.</p>
+                `,
+                keyTakeaways: [
+                    "Notion is best for all-in-one organization.",
+                    "Forest helps prevent smartphone distraction.",
+                    "Google Calendar is essential for time blocking."
+                ]
+            },
+            10: {
+                title: "Building a Standout Resume While in College",
+                category: "Career",
+                author: "Sarah Jenkins",
+                authorRole: "Head of Innovation",
+                authorBio: "Sarah is a former high school teacher turned EdTech researcher. She focuses on integrating AI to create personalized learning environments.",
+                authorImg: "images/blog_study_env.jpg",
+                date: "Oct 29, 2026",
+                readTime: "6 min read",
+                image: "images/blog_study_env.jpg",
+                intro: "Internships, projects, and clubs: how to make your resume shine before you even graduate.",
+                content: `
+                    <h2>Focus on Impact, Not Just Tasks</h2>
+                    <p>Don't just list what you did. Use the XYZ formula: Accomplished [X] as measured by [Y], by doing [Z].</p>
+                `,
+                keyTakeaways: [
+                    "Use the XYZ formula for bullet points.",
+                    "Highlight personal projects to show initiative.",
+                    "Keep formatting clean and parsable by ATS systems."
+                ]
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id') || 1; 
+            const article = blogData[id];
+            
+            const container = document.getElementById('dynamic-blog-content');
+
+            if (article) {
+                
+                // Construct the HTML for the 7 Sections
+                
+                // 1. Blog Details Hero
+                const heroHTML = `
+                <section class="details-section-hero" style="background-color: rgba(91, 58, 140, 0.05); padding: 80px 0 60px; text-align: center; border-bottom: 1px solid rgba(91, 58, 140, 0.1);">
+                    <div class="container">
+                        <div class="details-breadcrumb" style="color: var(--secondary-text); font-size: 0.95rem; font-weight: 500; margin-bottom: 20px;">
+                            <a href="index.html" style="color: var(--primary-purple); text-decoration: none;">Home</a> / 
+                            <a href="blog.html" style="color: var(--primary-purple); text-decoration: none;">Blog</a> / 
+                            <span style="color: var(--main-text);">${article.category}</span>
+                        </div>
+                        <span class="category-badge" style="display: inline-block; background: var(--primary-purple); color: white; padding: 6px 16px; border-radius: 100px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 20px;">${article.category}</span>
+                        <h1 class="details-title" style="font-size: 2.8rem; line-height: 1.3; margin-bottom: 20px; color: var(--main-text); font-family: 'Plus Jakarta Sans', sans-serif;">${article.title}</h1>
+                        <p class="details-intro" style="font-size: 1.15rem; color: var(--secondary-text); max-width: 800px; margin: 0 auto 30px; line-height: 1.6;">${article.intro}</p>
+                        
+                        <div class="details-meta-row" style="display: flex; align-items: center; justify-content: center; gap: 15px;">
+                            <img src="${article.authorImg}" alt="${article.author}" class="meta-avatar" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                            <div class="meta-info" style="text-align: left;">
+                                <strong style="display: block; color: var(--main-text); font-size: 1rem;">${article.author}</strong>
+                                <span style="color: var(--secondary-text); font-size: 0.85rem;">${article.date} &bull; ${article.readTime}</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>`;
+
+                // 2. Featured Image
+                const imageHTML = `
+                <section class="details-section-image">
+                    <div class="container details-image-container">
+                        <img src="${article.image}" alt="${article.title}" class="details-featured-img">
+                    </div>
+                </section>`;
+
+                // 3. Article Content
+                const contentHTML = `
+                <section class="details-section-content">
+                    <div class="container details-content-wrapper">
+                        ${article.content}
+                    </div>
+                </section>`;
+
+                // 4. Key Takeaways
+                let takeawaysItems = article.keyTakeaways.map(item => `<li>${item}</li>`).join("");
+                const takeawaysHTML = `
+                <section class="details-section-takeaways">
+                    <div class="container details-content-wrapper">
+                        <div class="takeaways-box">
+                            <h3><span class="icon">💡</span> Key Takeaways</h3>
+                            <ul>
+                                ${takeawaysItems}
+                            </ul>
+                        </div>
+                    </div>
+                </section>`;
+
+                // 5. Author Section
+                const authorHTML = `
+                <section class="details-section-author">
+                    <div class="container details-content-wrapper">
+                        <div class="author-bio-card">
+                            <img src="${article.authorImg}" alt="${article.author}" class="author-bio-img">
+                            <div class="author-bio-info">
+                                <h4>${article.author}</h4>
+                                <span class="author-role">${article.authorRole}</span>
+                                <p>${article.authorBio}</p>
+                                <div class="author-socials">
+                                    <a href="#">Twitter</a>
+                                    <a href="#">LinkedIn</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>`;
+
+                // 6. Related Articles
+                let relatedHTML = `
+                <section class="details-section-related">
+                    <div class="container">
+                        <h2 class="section-title text-center" style="margin-bottom: 40px;">Related Articles</h2>
+                        <div class="modern-blog-grid">`;
+                        
+                let relatedCount = 0;
+                for (const key in blogData) {
+                    if (key != id && relatedCount < 3) {
+                        const rel = blogData[key];
+                        relatedHTML += `
+                            <article class="modern-blog-card">
+                                <div class="card-img-wrapper">
+                                    <img src="${rel.image}" alt="${rel.title}" class="card-img">
+                                    <span class="card-category">${rel.category}</span>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">
+                                        <a href="blog-details.html?id=${key}">${rel.title}</a>
+                                    </h3>
+                                    <p class="card-excerpt">${rel.intro.substring(0, 80)}...</p>
+                                    <div class="card-footer" style="flex-wrap: wrap; flex-direction: column; align-items: flex-start; gap: 15px;">
+                                        <div class="author-group">
+                                            <img src="${rel.authorImg}" class="author-pic">
+                                            <span class="author-name">${rel.author}</span>
+                                        </div>
+                                        <a href="blog-details.html?id=${key}" class="read-more-btn">
+                                            Read More 
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+                        `;
+                        relatedCount++;
+                    }
+                }
+                relatedHTML += `</div></div></section>`;
+
+                // 7. Final CTA
+                const ctaHTML = `
+                <section class="details-section-cta">
+                    <div class="container text-center">
+                        <h2>Keep Learning. Keep Growing.</h2>
+                        <p>Discover more resources, courses, and insights from Learnora.</p>
+                        <div class="cta-actions">
+                            <a href="courses.html" class="btn btn-primary">Explore Courses</a>
+                            <a href="blog.html" class="btn btn-secondary">Back to Blog</a>
+                        </div>
+                    </div>
+                </section>`;
+
+                // Inject all 7 sections sequentially
+                container.innerHTML = heroHTML + imageHTML + contentHTML + takeawaysHTML + authorHTML + relatedHTML + ctaHTML;
+
+            } else {
+                // Article Not Found State
+                container.innerHTML = `
+                    <div class="container text-center" style="padding: 150px 0;">
+                        <h1 style="color: var(--main-text); font-size: 3rem; margin-bottom: 20px;">Article Not Found</h1>
+                        <p style="color: var(--secondary-text); font-size: 1.2rem; margin-bottom: 40px;">The article you are looking for does not exist or has been removed.</p>
+                        <a href="blog.html" class="primary-btn-style" style="padding: 14px 32px; border-radius: 100px; text-decoration: none;">Back to Blog</a>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

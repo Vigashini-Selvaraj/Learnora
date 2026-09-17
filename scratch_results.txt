@@ -1,0 +1,33 @@
+<h2 class="section-title">Proven Results</h2>
+                </div>
+                <div class="testi-grid">
+                    <div class="testi-card">
+                        <div class="testi-rating">⭐⭐⭐⭐⭐</div>
+                        <p class="testi-text">"I was struggling with time in my math paper. The mock series here taught
+                            me how to finish 15 mins early!"</p>
+                        <div class="testi-author">
+                            <strong>Arjun K.</strong>
+                            <span>Scored 99/100 in Math</span>
+                        </div>
+                    </div>
+                    <div class="testi-card">
+                        <div class="testi-rating">⭐⭐⭐⭐⭐</div>
+                        <p class="testi-text">"The intensive crash course in the last 2 months completely changed my
+                            daughter's trajectory. She got accepted into top tier colleges."</p>
+                        <div class="testi-author">
+                            <strong>Sunita Verma</strong>
+                            <span>Parent</span>
+                        </div>
+                    </div>
+                    <div class="testi-card">
+                        <div class="testi-rating">⭐⭐⭐⭐⭐</div>
+                        <p class="testi-text">"Past paper solving sessions are golden. I saw exactly the same type of
+                            questions in my final board exams."</p>
+                        <div class="testi-author">
+                            <strong>Karan S.</strong>
+                            <span>Scored 96% Aggregate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

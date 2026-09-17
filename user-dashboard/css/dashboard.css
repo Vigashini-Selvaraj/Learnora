@@ -1,0 +1,120 @@
+
+/* Dashboard Layout & Grid */
+:root {
+    --sidebar-width: 260px;
+    --header-height: 70px;
+}
+
+body {
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--main-text);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--main-text);
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Base Cards */
+.dash-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Grid Layouts */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+/* Stat Card specific */
+.stat-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(91, 58, 140, 0.1);
+    color: var(--primary-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 8px 0 4px;
+}
+.stat-label {
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+}
+
+/* Utility Classes */
+.btn-primary {
+    background: var(--primary-purple);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+}
+.btn-primary:hover {
+    background: var(--primary-purple-dark);
+}
+.btn-outline {
+    background: transparent;
+    color: var(--primary-purple);
+    border: 1px solid var(--primary-purple);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+}
+.btn-outline:hover {
+    background: rgba(91, 58, 140, 0.05);
+}
+
+/* Badges */
+.badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.badge-pending { background: #FEF3C7; color: #D97706; }
+.badge-submitted { background: #D1FAE5; color: #059669; }
+.badge-upcoming { background: #E0E7FF; color: #4F46E5; }
+.badge-overdue { background: #FEE2E2; color: #DC2626; }

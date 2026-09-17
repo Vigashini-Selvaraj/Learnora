@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learnora Admin Dashboard</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js for Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Global CSS Variables -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-mode">
+
+<div class="admin-layout">
+    
+    <!-- ==============================================
+         1. SIDEBAR
+         ============================================== -->
+    <aside class="admin-sidebar" id="adminSidebar">
+        <div class="sidebar-header">
+            <a href="index.html">
+                <img src="images/learnora_logo.jpg" alt="Learnora" class="sidebar-logo" id="adminSidebarLogo">
+            </a>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-view="dashboard">
+                <i class="fa-solid fa-chart-pie"></i> Dashboard
+            </a>
+            <a href="#" class="nav-item" data-view="students">
+                <i class="fa-solid fa-user-graduate"></i> Students
+            </a>
+            <a href="#" class="nav-item" data-view="tutors">
+                <i class="fa-solid fa-chalkboard-user"></i> Tutors
+            </a>
+            <a href="#" class="nav-item" data-view="classes">
+                <i class="fa-solid fa-users-rectangle"></i> Classes & Batches
+            </a>
+            <a href="#" class="nav-item" data-view="attendance">
+                <i class="fa-solid fa-clipboard-user"></i> Attendance
+            </a>
+            <a href="#" class="nav-item" data-view="materials">
+                <i class="fa-solid fa-book-open"></i> Study Materials
+            </a>
+            <a href="#" class="nav-item" data-view="tests">
+                <i class="fa-solid fa-file-pen"></i> Tests & Exams
+            </a>
+            <a href="#" class="nav-item" data-view="schedule">
+                <i class="fa-regular fa-calendar-days"></i> Schedule
+            </a>
+            <a href="#" class="nav-item" data-view="reports">
+                <i class="fa-solid fa-chart-line"></i> Reports
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="admin-profile-sm">
+                <img src="images/author_david_chen.jpg" alt="Admin User" onerror="this.src='https://ui-avatars.com/api/?name=Admin+User&background=5B3A8C&color=fff'">
+                <div class="admin-profile-info">
+                    <strong>Admin User</strong>
+                    <span>Center Administrator</span>
+                </div>
+            </div>
+            <a href="index.html" class="nav-item" style="margin-top: 16px; padding: 8px 0;">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+            </a>
+        </div>
+    </aside>
+
+    <!-- ==============================================
+         MAIN CONTENT AREA
+         ============================================== -->
+    <main class="admin-main">
+        
+        <!-- 2. TOP HEADER -->
+        <header class="admin-header">
+            <div class="header-left">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div>
+                    <h1 class="page-title" id="pageTitle">Dashboard</h1>
+                    <p class="page-desc" id="pageDesc">Overview and quick statistics</p>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <button class="icon-btn rtl-toggle" aria-label="Toggle RTL">
+                    <span class="rtl-text" style="font-size: 0.9rem; font-weight: 600;">RTL</span>
+                </button>
+                
+                <button class="icon-btn theme-toggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon moon-icon"></i>
+                    <i class="fa-solid fa-sun sun-icon" style="display: none;"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="admin-content">
+        
+            <!-- ==============================================
+                 3. DASHBOARD OVERVIEW
+                 ============================================== -->
+            <section id="dashboard" class="view-section active">
+                <div style="margin-bottom: 32px;">
+                    <h2 style="font-size: 1.8rem; margin: 0 0 8px 0; color: var(--main-text);">Good Morning, Admin 👋</h2>
+                    <p style="color: var(--secondary-text); margin: 0;">Here's what's happening at Learnora today, September 15, 2026.</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h4>Total Students</h4>
+                            <div class="stat-value">248</div>
+                            <div class="stat-trend"><i class="fa-solid fa-arrow-up"></i> +12 this month</div>
+                        </div>
+                        <div class="stat-icon"><i class="fa-solid fa-user-graduate"></i></div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h4>Active Tutors</h4>
+                            <div class="stat-value">18</div>
+                            <div class="stat-trend"><i class="fa-solid fa-arrow-up"></i> +2 this month</div>
+                        </div>
+                        <div class="stat-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h4>Active Batches</h4>
+                            <div class="stat-value">24</div>
+                            <div class="stat-trend warning"><i class="fa-solid fa-clock"></i> 3 starting soon</div>
+                        </div>
+                        <div class="stat-icon"><i class="fa-solid fa-users-rectangle"></i></div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h4>Today's Classes</h4>
+                            <div class="stat-value">12</div>
+                            <div class="stat-trend"><i class="fa-solid fa-check"></i> 9 completed</div>
+                        </div>
+                        <div class="stat-icon"><i class="fa-solid fa-school"></i></div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h4>Attendance Rate</h4>
+                            <div class="stat-value">92%</div>
+                            <div class="stat-trend"><i class="fa-solid fa-arrow-up"></i> +4.5% this month</div>
+                        </div>
+                        <div class="stat-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h4>Upcoming Exams</h4>
+                            <div class="stat-value">6</div>
+                            <div class="stat-trend warning"><i class="fa-solid fa-calendar"></i> Next exam in 3 days</div>
+                        </div>
+                        <div class="stat-icon"><i class="fa-solid fa-file-pen"></i></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h4>Total Revenue</h4>
+                            <div class="stat-value">$12,450</div>
+                            <div class="stat-trend"><i class="fa-solid fa-arrow-up"></i> +8% this month</div>
+                        </div>
+                        <div class="stat-icon"><i class="fa-solid fa-dollar-sign"></i></div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h4>Pending Messages</h4>
+                            <div class="stat-value">5</div>
+                            <div class="stat-trend warning"><i class="fa-solid fa-envelope"></i> Needs attention</div>
+                        </div>
+                        <div class="stat-icon"><i class="fa-solid fa-comment-dots"></i></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==============================================
+                 4. STUDENT MANAGEMENT
+                 ============================================== -->
+            <section id="students" class="view-section">
+                <div class="admin-panel">
+                    <div class="panel-header">
+                        <h3 class="panel-title">Enrolled Students</h3>
+                        <div class="panel-actions">
+                            <div class="search-bar" style="display: block;">
+                                <i class="fa-solid fa-filter"></i>
+                                <select id="studentFilter" class="admin-form-control" style="padding-left: 40px; border-radius: 100px; width: 150px;">
+                                    <option value="">All Grades</option>
+                                    <option value="10">Grade 10</option>
+                                    <option value="9">Grade 9</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary" data-modal-target="addStudentModal">
+                                <i class="fa-solid fa-plus"></i> Add Student
+                            </button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table student-list-table">
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>ID</th>
+                                    <th>Grade</th>
+                                    <th>Subject/Program</th>
+                                    <th>Batch</th>
+                                    <th>Attendance</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="studentsTableBody">
+                                <tr>
+                                    <td>
+                                        <div style="font-weight: 600;">Aarav Kumar</div>
+                                        <div style="font-size: 0.8rem; color: var(--secondary-text);">aarav@example.com</div>
+                                    </td>
+                                    <td>STU-1001</td>
+                                    <td>Grade 10</td>
+                                    <td>Mathematics</td>
+                                    <td>Batch A</td>
+                                    <td><span class="status-badge success">95%</span></td>
+                                    <td><span class="status-badge purple">Active</span></td>
+                                    <td>
+                                        <div class="action-btns">
+                                            <button class="action-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                            <button class="action-btn delete" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="font-weight: 600;">Ananya Raj</div>
+                                        <div style="font-size: 0.8rem; color: var(--secondary-text);">ananya@example.com</div>
+                                    </td>
+                                    <td>STU-1002</td>
+                                    <td class="stu-grade">Grade 9</td>
+                                    <td>Science</td>
+                                    <td>Batch B</td>
+                                    <td><span class="status-badge success">91%</span></td>
+                                    <td><span class="status-badge purple">Active</span></td>
+                                    <td>
+                                        <div class="action-btns">
+                                            <button class="action-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                            <button class="action-btn delete" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="font-weight: 600;">Rahul Dev</div>
+                                        <div style="font-size: 0.8rem; color: var(--secondary-text);">rahul@example.com</div>
+                                    </td>
+                                    <td>STU-1003</td>
+                                    <td class="stu-grade">Grade 10</td>
+                                    <td>Physics</td>
+                                    <td>Batch C</td>
+                                    <td><span class="status-badge warning">75%</span></td>
+                                    <td><span class="status-badge purple">Active</span></td>
+                                    <td>
+                                        <div class="action-btns">
+                                            <button class="action-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                            <button class="action-btn delete" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="font-weight: 600;">Simran Kaur</div>
+                                        <div style="font-size: 0.8rem; color: var(--secondary-text);">simran@example.com</div>
+                                    </td>
+                                    <td>STU-1004</td>
+                                    <td class="stu-grade">Grade 8</td>
+                                    <td>English</td>
+                                    <td>Batch D</td>
+                                    <td><span class="status-badge success">98%</span></td>
+                                    <td><span class="status-badge purple">Active</span></td>
+                                    <td>
+                                        <div class="action-btns">
+                                            <button class="action-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                            <button class="action-btn delete" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==============================================
+                 5. TUTOR MANAGEMENT
+                 ============================================== -->
+            <section id="tutors" class="view-section">
+                <div class="panel-header" style="background: transparent; border: none; padding: 0 0 24px 0;">
+                    <h3 class="panel-title">Our Teaching Staff</h3>
+                    <button class="btn btn-primary" data-modal-target="addTutorModal">
+                        <i class="fa-solid fa-plus"></i> Add Tutor
+                    </button>
+                </div>
+                
+                <div class="cards-grid" id="tutorsGrid">
+                    <!-- Tutor Card -->
+                    <div class="profile-card">
+                        <img src="images/author_david_chen.jpg" alt="Priya Sharma" class="profile-img">
+                        <h4 class="profile-name">Dr. Priya Sharma</h4>
+                        <div class="profile-role">Mathematics Expert</div>
+                        <div class="profile-meta">
+                            <div class="meta-box">
+                                <strong>8 Yrs</strong>
+                                <span>Experience</span>
+                            </div>
+                            <div class="meta-box">
+                                <strong>4</strong>
+                                <span>Active Batches</span>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <span class="status-badge purple">Grades 8-10</span>
+                            <span class="status-badge success">Available</span>
+                        </div>
+                        <div class="action-btns" style="justify-content: center;">
+                            <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">View Profile</button>
+                            <button class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">Schedule</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Tutor Card -->
+                    <div class="profile-card">
+                        <img src="images/author_emily_roberts.jpg" alt="Emily Roberts" class="profile-img">
+                        <h4 class="profile-name">Emily Roberts</h4>
+                        <div class="profile-role">Science Specialist</div>
+                        <div class="profile-meta">
+                            <div class="meta-box">
+                                <strong>5 Yrs</strong>
+                                <span>Experience</span>
+                            </div>
+                            <div class="meta-box">
+                                <strong>3</strong>
+                                <span>Active Batches</span>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <span class="status-badge purple">Grades 9-12</span>
+                            <span class="status-badge success">Available</span>
+                        </div>
+                        <div class="action-btns" style="justify-content: center;">
+                            <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">View Profile</button>
+                            <button class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">Schedule</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Tutor Card -->
+                    <div class="profile-card">
+                        <img src="https://ui-avatars.com/api/?name=Michael+Chen&background=10B981&color=fff" alt="Michael Chen" class="profile-img">
+                        <h4 class="profile-name">Michael Chen</h4>
+                        <div class="profile-role">Physics Expert</div>
+                        <div class="profile-meta">
+                            <div class="meta-box">
+                                <strong>6 Yrs</strong>
+                                <span>Experience</span>
+                            </div>
+                            <div class="meta-box">
+                                <strong>2</strong>
+                                <span>Active Batches</span>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <span class="status-badge purple">Grades 10-12</span>
+                            <span class="status-badge success">Available</span>
+                        </div>
+                        <div class="action-btns" style="justify-content: center;">
+                            <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">View Profile</button>
+                            <button class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">Schedule</button>
+                        </div>
+                    </div>
+
+                    <!-- Tutor Card -->
+                    <div class="profile-card">
+                        <img src="https://ui-avatars.com/api/?name=Sarah+Connor&background=F4B942&color=fff" alt="Sarah Connor" class="profile-img">
+                        <h4 class="profile-name">Sarah Connor</h4>
+                        <div class="profile-role">English Teacher</div>
+                        <div class="profile-meta">
+                            <div class="meta-box">
+                                <strong>4 Yrs</strong>
+                                <span>Experience</span>
+                            </div>
+                            <div class="meta-box">
+                                <strong>3</strong>
+                                <span>Active Batches</span>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <span class="status-badge purple">Grades 8-12</span>
+                            <span class="status-badge success">Available</span>
+                        </div>
+                        <div class="action-btns" style="justify-content: center;">
+                            <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">View Profile</button>
+                            <button class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">Schedule</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==============================================
+                 6. CLASSES & BATCHES
+                 ============================================== -->
+            <section id="classes" class="view-section">
+                <div class="panel-header" style="background: transparent; border: none; padding: 0 0 24px 0;">
+                    <h3 class="panel-title">Active Batches</h3>
+                    <button class="btn btn-primary" data-modal-target="addBatchModal">
+                        <i class="fa-solid fa-plus"></i> Create New Batch
+                    </button>
+                </div>
+                
+                <div class="cards-grid" id="batchesGrid">
+                    <div class="admin-panel" style="margin-bottom: 0;">
+                        <div style="padding: 24px; border-bottom: 1px solid var(--admin-border);">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                                <div>
+                                    <h4 style="margin: 0 0 4px 0; font-size: 1.2rem; color: var(--main-text);">Batch A - Grade 10</h4>
+                                    <span style="color: var(--primary-purple); font-weight: 600; font-size: 0.9rem;">Mathematics</span>
+                                </div>
+                                <span class="status-badge success">Active</span>
+                            </div>
+                            <div style="color: var(--secondary-text); font-size: 0.9rem; margin-bottom: 16px;">
+                                <i class="fa-solid fa-chalkboard-user" style="width: 20px;"></i> Tutor: Dr. Priya Sharma
+                            </div>
+                            <div style="display: flex; gap: 16px; font-size: 0.9rem; color: var(--main-text);">
+                                <div><i class="fa-regular fa-clock" style="color: var(--primary-purple);"></i> M/W/F (5PM)</div>
+                                <div><i class="fa-solid fa-location-dot" style="color: var(--primary-purple);"></i> Room 101</div>
+                            </div>
+                        </div>
+                        <div style="padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.01);">
+                            <span style="font-weight: 600; color: var(--main-text);"><i class="fa-solid fa-user-group"></i> 18 Students</span>
+                            <div class="action-btns">
+                                <button class="btn btn-outline" style="padding: 6px 12px; font-size: 0.8rem;">Manage</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-panel" style="margin-bottom: 0;">
+                        <div style="padding: 24px; border-bottom: 1px solid var(--admin-border);">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                                <div>
+                                    <h4 style="margin: 0 0 4px 0; font-size: 1.2rem; color: var(--main-text);">Batch B - Grade 9</h4>
+                                    <span style="color: var(--primary-purple); font-weight: 600; font-size: 0.9rem;">Science</span>
+                                </div>
+                                <span class="status-badge success">Active</span>
+                            </div>
+                            <div style="color: var(--secondary-text); font-size: 0.9rem; margin-bottom: 16px;">
+                                <i class="fa-solid fa-chalkboard-user" style="width: 20px;"></i> Tutor: Emily Roberts
+                            </div>
+                            <div style="display: flex; gap: 16px; font-size: 0.9rem; color: var(--main-text);">
+                                <div><i class="fa-regular fa-clock" style="color: var(--primary-purple);"></i> T/Th (4PM)</div>
+                                <div><i class="fa-solid fa-location-dot" style="color: var(--primary-purple);"></i> Room 102</div>
+                            </div>
+                        </div>
+                        <div style="padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.01);">
+                            <span style="font-weight: 600; color: var(--main-text);"><i class="fa-solid fa-user-group"></i> 22 Students</span>
+                            <div class="action-btns">
+                                <button class="btn btn-outline" style="padding: 6px 12px; font-size: 0.8rem;">Manage</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-panel" style="margin-bottom: 0;">
+                        <div style="padding: 24px; border-bottom: 1px solid var(--admin-border);">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                                <div>
+                                    <h4 style="margin: 0 0 4px 0; font-size: 1.2rem; color: var(--main-text);">Batch C - Grade 10</h4>
+                                    <span style="color: var(--primary-purple); font-weight: 600; font-size: 0.9rem;">Physics</span>
+                                </div>
+                                <span class="status-badge warning">Starting Soon</span>
+                            </div>
+                            <div style="color: var(--secondary-text); font-size: 0.9rem; margin-bottom: 16px;">
+                                <i class="fa-solid fa-chalkboard-user" style="width: 20px;"></i> Tutor: Michael Chen
+                            </div>
+                            <div style="display: flex; gap: 16px; font-size: 0.9rem; color: var(--main-text);">
+                                <div><i class="fa-regular fa-clock" style="color: var(--primary-purple);"></i> Sat/Sun (10AM)</div>
+                                <div><i class="fa-solid fa-location-dot" style="color: var(--primary-purple);"></i> Room 104</div>
+                            </div>
+                        </div>
+                        <div style="padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.01);">
+                            <span style="font-weight: 600; color: var(--main-text);"><i class="fa-solid fa-user-group"></i> 14 Students</span>
+                            <div class="action-btns">
+                                <button class="btn btn-outline" style="padding: 6px 12px; font-size: 0.8rem;">Manage</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==============================================
+                 7. ATTENDANCE MANAGEMENT
+                 ============================================== -->
+            <section id="attendance" class="view-section">
+                <div class="stats-grid" style="grid-template-columns: repeat(4, 1fr);">
+                    <div class="stat-card" style="padding: 16px;">
+                        <div>
+                            <div style="color: var(--secondary-text); font-size: 0.85rem;">Today's Classes</div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--main-text);">12</div>
+                        </div>
+                    </div>
+                    <div class="stat-card" style="padding: 16px; border-left: 4px solid #10B981;">
+                        <div>
+                            <div style="color: var(--secondary-text); font-size: 0.85rem;">Present</div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: #10B981;">196</div>
+                        </div>
+                    </div>
+                    <div class="stat-card" style="padding: 16px; border-left: 4px solid #EF4444;">
+                        <div>
+                            <div style="color: var(--secondary-text); font-size: 0.85rem;">Absent</div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: #EF4444;">18</div>
+                        </div>
+                    </div>
+                    <div class="stat-card" style="padding: 16px; border-left: 4px solid var(--warm-yellow-dark);">
+                        <div>
+                            <div style="color: var(--secondary-text); font-size: 0.85rem;">Late</div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--warm-yellow-dark);">7</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-panel">
+                    <div class="panel-header">
+                        <h3 class="panel-title">Mark Attendance</h3>
+                        <div class="panel-actions">
+                            <input type="date" class="admin-form-control" style="width: auto;" value="2026-09-15">
+                            <select class="admin-form-control" style="width: auto;">
+                                <option>Batch A - Grade 10 Math</option>
+                                <option>Batch B - Grade 9 Science</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Student Name</th>
+                                    <th>ID</th>
+                                    <th>Check-in Time</th>
+                                    <th>Status (Click to toggle)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr>
+                                    <td><strong>Aarav Kumar</strong></td>
+                                    <td>STU-1001</td>
+                                    <td>4:55 PM</td>
+                                    <td><span class="status-badge success status-toggle">Present</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ananya Raj</strong></td>
+                                    <td>STU-1002</td>
+                                    <td>-</td>
+                                    <td><span class="status-badge danger status-toggle">Absent</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Karan Patel</strong></td>
+                                    <td>STU-1003</td>
+                                    <td>5:10 PM</td>
+                                    <td><span class="status-badge warning status-toggle">Late</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Rahul Dev</strong></td>
+                                    <td>STU-1004</td>
+                                    <td>4:50 PM</td>
+                                    <td><span class="status-badge success status-toggle">Present</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Simran Kaur</strong></td>
+                                    <td>STU-1005</td>
+                                    <td>5:05 PM</td>
+                                    <td><span class="status-badge warning status-toggle">Late</span></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==============================================
+                 8. STUDY MATERIAL MANAGEMENT
+                 ============================================== -->
+            <section id="materials" class="view-section">
+                <div class="admin-panel">
+                    <div class="panel-header">
+                        <h3 class="panel-title">Resource Library</h3>
+                        <button class="btn btn-primary" data-modal-target="addMaterialModal">
+                            <i class="fa-solid fa-upload"></i> Upload Material
+                        </button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Type</th>
+                                    <th>Subject & Grade</th>
+                                    <th>Batch</th>
+                                    <th>Date Uploaded</th>
+                                    <th>Downloads</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="materialsTableBody">
+                                <tr>
+                                    <td>
+                                        <div style="font-weight: 600;"><i class="fa-solid fa-file-pdf" style="color: #EF4444; margin-right: 8px;"></i>Algebra – Quadratic Equations</div>
+                                    </td>
+                                    <td><span class="status-badge purple">PDF Notes</span></td>
+                                    <td>Math - Grade 10</td>
+                                    <td>Batch A</td>
+                                    <td>Sep 12, 2026</td>
+                                    <td>45</td>
+                                    <td>
+                                        <div class="action-btns">
+                                            <button class="action-btn" title="Download"><i class="fa-solid fa-download"></i></button>
+                                            <button class="action-btn delete" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="font-weight: 600;"><i class="fa-solid fa-file-powerpoint" style="color: #F4B942; margin-right: 8px;"></i>Photosynthesis Deck</div>
+                                    </td>
+                                    <td><span class="status-badge success">Presentation</span></td>
+                                    <td>Science - Grade 9</td>
+                                    <td>Batch B</td>
+                                    <td>Sep 14, 2026</td>
+                                    <td>28</td>
+                                    <td>
+                                        <div class="action-btns">
+                                            <button class="action-btn" title="Download"><i class="fa-solid fa-download"></i></button>
+                                            <button class="action-btn delete" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="font-weight: 600;"><i class="fa-solid fa-file-word" style="color: #3B82F6; margin-right: 8px;"></i>Shakespeare Essay Topics</div>
+                                    </td>
+                                    <td><span class="status-badge warning">Document</span></td>
+                                    <td>English - Grade 8</td>
+                                    <td>Batch D</td>
+                                    <td>Sep 15, 2026</td>
+                                    <td>12</td>
+                                    <td>
+                                        <div class="action-btns">
+                                            <button class="action-btn" title="Download"><i class="fa-solid fa-download"></i></button>
+                                            <button class="action-btn delete" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==============================================
+                 9. TESTS & EXAMS
+                 ============================================== -->
+            <section id="tests" class="view-section">
+                <div class="stats-grid" style="grid-template-columns: repeat(4, 1fr);">
+                    <div class="stat-card" style="padding: 16px;">
+                        <div>
+                            <div style="color: var(--secondary-text); font-size: 0.85rem;">Upcoming Tests</div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--main-text);">4</div>
+                        </div>
+                    </div>
+                    <div class="stat-card" style="padding: 16px;">
+                        <div>
+                            <div style="color: var(--secondary-text); font-size: 0.85rem;">Upcoming Exams</div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--main-text);">2</div>
+                        </div>
+                    </div>
+                    <div class="stat-card" style="padding: 16px;">
+                        <div>
+                            <div style="color: var(--secondary-text); font-size: 0.85rem;">Completed</div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--main-text);">18</div>
+                        </div>
+                    </div>
+                    <div class="stat-card" style="padding: 16px; border-left: 4px solid var(--primary-purple);">
+                        <div>
+                            <div style="color: var(--secondary-text); font-size: 0.85rem;">Center Average</div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary-purple);">84%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-panel">
+                    <div class="panel-header">
+                        <h3 class="panel-title">Assessments Schedule</h3>
+                        <button class="btn btn-primary" data-modal-target="addTestModal">
+                            <i class="fa-solid fa-plus"></i> Schedule Test
+                        </button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Test Name</th>
+                                    <th>Subject & Batch</th>
+                                    <th>Date & Time</th>
+                                    <th>Details</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="testsTableBody">
+                                
+                                <tr>
+                                    <td><strong>Mathematics Unit Test</strong></td>
+                                    <td>Grade 10 - Batch A</td>
+                                    <td>Sep 18, 2026<br><span style="color: var(--secondary-text); font-size: 0.85rem;">5:00 PM</span></td>
+                                    <td>60 Mins / 50 Marks<br><span style="color: var(--secondary-text); font-size: 0.85rem;">18 Students</span></td>
+                                    <td><span class="status-badge warning">Upcoming</span></td>
+                                    <td>
+                                        <div class="action-btns">
+                                            <button class="action-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                            <button class="action-btn" title="Results"><i class="fa-solid fa-chart-bar"></i></button>
+                                            <button class="action-btn delete" title="Cancel"><i class="fa-solid fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Science Quiz</strong></td>
+                                    <td>Grade 9 - Batch B</td>
+                                    <td>Sep 20, 2026<br><span style="color: var(--secondary-text); font-size: 0.85rem;">4:00 PM</span></td>
+                                    <td>30 Mins / 25 Marks<br><span style="color: var(--secondary-text); font-size: 0.85rem;">22 Students</span></td>
+                                    <td><span class="status-badge warning">Upcoming</span></td>
+                                    <td>
+                                        <div class="action-btns">
+                                            <button class="action-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                            <button class="action-btn" title="Results"><i class="fa-solid fa-chart-bar"></i></button>
+                                            <button class="action-btn delete" title="Cancel"><i class="fa-solid fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Physics Final</strong></td>
+                                    <td>Grade 10 - Batch C</td>
+                                    <td>Oct 05, 2026<br><span style="color: var(--secondary-text); font-size: 0.85rem;">10:00 AM</span></td>
+                                    <td>120 Mins / 100 Marks<br><span style="color: var(--secondary-text); font-size: 0.85rem;">14 Students</span></td>
+                                    <td><span class="status-badge purple">Scheduled</span></td>
+                                    <td>
+                                        <div class="action-btns">
+                                            <button class="action-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                            <button class="action-btn" title="Results"><i class="fa-solid fa-chart-bar"></i></button>
+                                            <button class="action-btn delete" title="Cancel"><i class="fa-solid fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==============================================
+                 10. SCHEDULE MANAGEMENT
+                 ============================================== -->
+            <section id="schedule" class="view-section">
+                <div class="panel-header" style="background: transparent; border: none; padding: 0 0 24px 0;">
+                    <h3 class="panel-title">Center Timetable</h3>
+                    <div class="panel-actions">
+                        <button class="btn btn-outline"><i class="fa-solid fa-print"></i> Print</button>
+                        <button class="btn btn-primary" data-modal-target="addClassModal"><i class="fa-solid fa-plus"></i> Add Class</button>
+                    </div>
+                </div>
+                
+                <div class="admin-panel" style="padding: 24px; overflow-x: auto;">
+                    <div class="timetable-grid" style="min-width: 800px;">
+                        <!-- Header Row -->
+                        <div class="timetable-header">Time</div>
+                        <div class="timetable-header">Monday</div>
+                        <div class="timetable-header">Tuesday</div>
+                        <div class="timetable-header">Wednesday</div>
+                        <div class="timetable-header">Thursday</div>
+                        <div class="timetable-header">Friday</div>
+                        <div class="timetable-header">Saturday</div>
+                        
+                        <!-- Row 1 -->
+                        <div class="timetable-cell time-label">4:00 PM</div>
+                        <div class="timetable-cell"></div>
+                        <div class="timetable-cell">
+                            <div class="class-slot">
+                                <strong>Science - Gr 9</strong>
+                                <span>Batch B (Emily R.)</span>
+                                <span>Room 102</span>
+                            </div>
+                        </div>
+                        <div class="timetable-cell"></div>
+                        <div class="timetable-cell">
+                            <div class="class-slot">
+                                <strong>Science - Gr 9</strong>
+                                <span>Batch B (Emily R.)</span>
+                                <span>Room 102</span>
+                            </div>
+                        </div>
+                        <div class="timetable-cell"></div>
+                        <div class="timetable-cell"></div>
+                        
+                        <!-- Row 2 -->
+                        <div class="timetable-cell time-label">5:00 PM</div>
+                        <div class="timetable-cell">
+                            <div class="class-slot" style="border-color: #F4B942; background: rgba(244, 185, 66, 0.05);">
+                                <strong style="color: #F4B942;">Math - Gr 10</strong>
+                                <span>Batch A (Priya S.)</span>
+                                <span>Room 101</span>
+                            </div>
+                        </div>
+                        <div class="timetable-cell"></div>
+                        <div class="timetable-cell">
+                            <div class="class-slot" style="border-color: #F4B942; background: rgba(244, 185, 66, 0.05);">
+                                <strong style="color: #F4B942;">Math - Gr 10</strong>
+                                <span>Batch A (Priya S.)</span>
+                                <span>Room 101</span>
+                            </div>
+                        </div>
+                        <div class="timetable-cell"></div>
+                        <div class="timetable-cell">
+                            <div class="class-slot" style="border-color: #F4B942; background: rgba(244, 185, 66, 0.05);">
+                                <strong style="color: #F4B942;">Math - Gr 10</strong>
+                                <span>Batch A (Priya S.)</span>
+                                <span>Room 101</span>
+                            </div>
+                        </div>
+                        <div class="timetable-cell"></div>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==============================================
+                 11. REPORTS & ANALYTICS
+                 ============================================== -->
+            <section id="reports" class="view-section">
+                <div class="panel-header" style="background: transparent; border: none; padding: 0 0 24px 0;">
+                    <h3 class="panel-title">Center Analytics</h3>
+                    <div class="panel-actions">
+                        <select class="admin-form-control" style="width: 150px;">
+                            <option>This Month</option>
+                            <option>Last 3 Months</option>
+                            <option>This Year</option>
+                        </select>
+                        <button class="btn btn-outline"><i class="fa-solid fa-file-export"></i> Export</button>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="admin-panel" style="flex: 2;">
+                        <div class="panel-header">
+                            <h4 style="margin:0; font-size: 1rem; color: var(--main-text);">Student Enrollment Growth</h4>
+                        </div>
+                        <div style="padding: 24px;">
+                            <div class="chart-container">
+                                <canvas id="enrollmentChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-panel" style="flex: 1;">
+                        <div class="panel-header">
+                            <h4 style="margin:0; font-size: 1rem; color: var(--main-text);">Students by Subject</h4>
+                        </div>
+                        <div style="padding: 24px;">
+                            <div class="chart-container">
+                                <canvas id="subjectChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            
+        </div> <!-- End admin-content -->
+    </main>
+</div>
+
+<!-- ==============================================
+     MODALS
+     ============================================== -->
+
+<!-- Add Student Modal -->
+<div class="admin-modal" id="addStudentModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Add New Student</h3>
+            <button class="close-modal">&times;</button>
+        </div>
+        <form class="mock-form" id="studentForm">
+            <div class="modal-body">
+                <div class="form-row">
+                    <div class="admin-form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="admin-form-control" required>
+                    </div>
+                    <div class="admin-form-group">
+                        <label>Email</label>
+                        <input type="email" class="admin-form-control" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="admin-form-group">
+                        <label>Grade</label>
+                        <select class="admin-form-control" required>
+                            <option value="">Select Grade</option>
+                            <option>Grade 10</option>
+                            <option>Grade 9</option>
+                            <option>Grade 8</option>
+                        </select>
+                    </div>
+                    <div class="admin-form-group">
+                        <label>Assign Batch</label>
+                        <select class="admin-form-control" required>
+                            <option value="">Select Batch</option>
+                            <option>Batch A (Math)</option>
+                            <option>Batch B (Science)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="admin-form-group">
+                    <label>Parent/Guardian Name</label>
+                    <input type="text" class="admin-form-control" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" data-close-modal>Cancel</button>
+                <button type="submit" class="btn btn-primary">Save Student</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- Add Tutor Modal -->
+<div class="admin-modal" id="addTutorModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Add New Tutor</h3>
+            <button class="close-modal">&times;</button>
+        </div>
+        <form class="mock-form" id="tutorForm">
+            <div class="modal-body">
+                <div class="form-row">
+                    <div class="admin-form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="admin-form-control" name="name" required>
+                    </div>
+                    <div class="admin-form-group">
+                        <label>Role / Specialization</label>
+                        <input type="text" class="admin-form-control" name="role" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="admin-form-group">
+                        <label>Experience (Years)</label>
+                        <input type="number" class="admin-form-control" name="experience" required>
+                    </div>
+                    <div class="admin-form-group">
+                        <label>Grades Taught</label>
+                        <input type="text" class="admin-form-control" name="grades" placeholder="e.g. Grades 8-10" required>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" data-close-modal>Cancel</button>
+                <button type="submit" class="btn btn-primary">Save Tutor</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Add Batch Modal -->
+<div class="admin-modal" id="addBatchModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Create New Batch</h3>
+            <button class="close-modal">&times;</button>
+        </div>
+        <form class="mock-form" id="batchForm">
+            <div class="modal-body">
+                <div class="admin-form-group">
+                    <label>Batch Name</label>
+                    <input type="text" class="admin-form-control" name="batchName" required>
+                </div>
+                <div class="admin-form-group">
+                    <label>Subject</label>
+                    <input type="text" class="admin-form-control" name="subject" required>
+                </div>
+                <div class="admin-form-group">
+                    <label>Tutor</label>
+                    <input type="text" class="admin-form-control" name="tutor" required>
+                </div>
+                <div class="form-row">
+                    <div class="admin-form-group">
+                        <label>Schedule (e.g. M/W/F 5PM)</label>
+                        <input type="text" class="admin-form-control" name="schedule" required>
+                    </div>
+                    <div class="admin-form-group">
+                        <label>Room</label>
+                        <input type="text" class="admin-form-control" name="room" required>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" data-close-modal>Cancel</button>
+                <button type="submit" class="btn btn-primary">Create Batch</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Add Material Modal -->
+<div class="admin-modal" id="addMaterialModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Upload Study Material</h3>
+            <button class="close-modal">&times;</button>
+        </div>
+        <form class="mock-form" id="materialForm">
+            <div class="modal-body">
+                <div class="admin-form-group">
+                    <label>Title</label>
+                    <input type="text" class="admin-form-control" name="title" required>
+                </div>
+                <div class="admin-form-group">
+                    <label>Type (e.g. PDF Notes)</label>
+                    <input type="text" class="admin-form-control" name="type" required>
+                </div>
+                <div class="admin-form-group">
+                    <label>Subject & Grade</label>
+                    <input type="text" class="admin-form-control" name="subjectGrade" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" data-close-modal>Cancel</button>
+                <button type="submit" class="btn btn-primary">Upload</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Schedule Test Modal -->
+<div class="admin-modal" id="addTestModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Schedule Test</h3>
+            <button class="close-modal">&times;</button>
+        </div>
+        <form class="mock-form" id="testForm">
+            <div class="modal-body">
+                <div class="admin-form-group">
+                    <label>Test Name</label>
+                    <input type="text" class="admin-form-control" name="testName" required>
+                </div>
+                <div class="admin-form-group">
+                    <label>Subject & Batch</label>
+                    <input type="text" class="admin-form-control" name="subjectBatch" required>
+                </div>
+                <div class="form-row">
+                    <div class="admin-form-group">
+                        <label>Date</label>
+                        <input type="date" class="admin-form-control" name="date" required>
+                    </div>
+                    <div class="admin-form-group">
+                        <label>Time</label>
+                        <input type="time" class="admin-form-control" name="time" required>
+                    </div>
+                </div>
+                <div class="admin-form-group">
+                    <label>Details (e.g. 60 Mins / 50 Marks)</label>
+                    <input type="text" class="admin-form-control" name="details" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" data-close-modal>Cancel</button>
+                <button type="submit" class="btn btn-primary">Schedule Test</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Add Class Modal -->
+<div class="admin-modal" id="addClassModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Add Class to Schedule</h3>
+            <button class="close-modal">&times;</button>
+        </div>
+        <form class="mock-form" id="classForm">
+            <div class="modal-body">
+                <div class="admin-form-group">
+                    <label>Class Name (e.g. Math - Gr 10)</label>
+                    <input type="text" class="admin-form-control" name="className" required>
+                </div>
+                <div class="admin-form-group">
+                    <label>Batch & Tutor</label>
+                    <input type="text" class="admin-form-control" name="batchTutor" required>
+                </div>
+                <div class="admin-form-group">
+                    <label>Room</label>
+                    <input type="text" class="admin-form-control" name="room" required>
+                </div>
+                <div class="form-row">
+                    <div class="admin-form-group">
+                        <label>Day</label>
+                        <select class="admin-form-control" name="day" required>
+                            <option value="1">Monday</option>
+                            <option value="2">Tuesday</option>
+                            <option value="3">Wednesday</option>
+                            <option value="4">Thursday</option>
+                            <option value="5">Friday</option>
+                            <option value="6">Saturday</option>
+                        </select>
+                    </div>
+                    <div class="admin-form-group">
+                        <label>Time (Row Index 1-2)</label>
+                        <select class="admin-form-control" name="timeRow" required>
+                            <option value="1">4:00 PM</option>
+                            <option value="2">5:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" data-close-modal>Cancel</button>
+                <button type="submit" class="btn btn-primary">Add Class</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+/* ==========================================================================
+   New Navbar Styles (From Scratch)
+   ========================================================================== */
+.new-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+.new-navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+.new-logo-img {
+    height: 40px;
+    width: auto;
+}
+.new-nav-links {
+    display: flex;
+    gap: 20px;
+}
+.new-nav-link {
+    color: var(--main-text);
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+.new-nav-link:hover {
+    color: var(--primary-purple);
+    background-color: rgba(91, 58, 140, 0.05);
+}
+.new-nav-actions {
+    display: flex;
+    align-items: center;
+}
+.new-icon-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    font-size: 1rem;
+    color: var(--main-text);
+}
+.new-desktop-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.new-mobile-toggles {
+    display: none;
+}
+.new-profile-menu {
+    position: relative;
+}
+.new-profile-btn {
+    background: rgba(91, 58, 140, 0.1);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--primary-purple);
+}
+.new-profile-btn svg {
+    width: 20px;
+    height: 20px;
+}
+.new-dropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: var(--dropdown-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px 0;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+    min-width: 180px;
+}
+.new-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+}
+.new-dropdown a {
+    display: block;
+    padding: 8px 16px;
+    color: var(--main-text);
+}
+.new-dropdown a:hover {
+    background: rgba(91, 58, 140, 0.05);
+}
+.new-mobile-only {
+    display: none;
+}
+.new-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.new-menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background: var(--main-text);
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .new-desktop-actions {
+        display: none;
+    }
+    .new-mobile-toggles {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .new-menu-toggle {
+        display: flex;
+    }
+    .new-nav-links {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--card-bg);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: var(--shadow-md);
+        display: none;
+    }
+    .new-nav-links.mobile-open {
+        display: flex;
+    }
+    .new-mobile-only {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .new-mobile-only hr {
+        margin: 10px 0;
+        border: none;
+        border-top: 1px solid var(--border-color);
+    }
+}
+
+/* ==========================================================================
+   New Footer Styles (From Scratch)
+   ========================================================================== */
+.new-footer {
+    background-color: var(--bg-light);
+    border-top: 1px solid var(--border-color);
+    padding: 60px 0 20px;
+    margin-top: 60px;
+}
+.new-footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+.new-footer-col h4 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--main-text);
+}
+.new-footer-logo {
+    height: 40px;
+    margin-bottom: 20px;
+}
+.new-footer-slogan {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--main-text);
+}
+.new-footer-desc {
+    color: var(--secondary-text);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+.new-footer-social {
+    display: flex;
+    gap: 10px;
+}
+.new-footer-social a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(91, 58, 140, 0.1);
+    color: var(--primary-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.new-footer-social a:hover {
+    background: var(--primary-purple);
+    color: white;
+}
+.new-footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.new-footer-links li {
+    margin-bottom: 12px;
+}
+.new-footer-links a {
+    color: var(--secondary-text);
+}
+.new-footer-links a:hover {
+    color: var(--primary-purple);
+}
+.new-footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.new-footer-contact li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    color: var(--secondary-text);
+}
+.new-footer-bottom {
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    text-align: center;
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+}
+@media (max-width: 768px) {
+    .new-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+/* Extra styles for circular buttons in navbar */
+.circle-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--main-text);
+    transition: 0.2s ease;
+}
+.circle-btn:hover {
+    background: rgba(91, 58, 140, 0.1);
+    color: var(--primary-purple);
+    border-color: var(--primary-purple);
+}
+.new-footer-social a {
+    background: transparent !important;
+    border: 1px solid var(--border-color);
+    color: var(--secondary-text) !important;
+    border-radius: 8px !important;
+    transition: 0.2s ease;
+}
+.new-footer-social a:hover {
+    background: var(--primary-purple) !important;
+    color: white !important;
+    border-color: var(--primary-purple) !important;
+}

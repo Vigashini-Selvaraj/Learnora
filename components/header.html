@@ -1,0 +1,66 @@
+<header class="new-navbar" id="navbar">
+    <div class="container new-navbar-container">
+        <!-- Left: Logo -->
+        <a href="#" class="new-logo">
+            <img src="assets/images/logo.png" alt="Learnora Logo" class="new-logo-img">
+        </a>
+
+        <!-- Center: Links -->
+        <nav class="new-nav-links" id="nav-links">
+            <a href="index.html" class="new-nav-link">Home</a>
+            <a href="home2.html" class="new-nav-link">Home 2</a>
+            <a href="about.html" class="new-nav-link">About Us</a>
+            <a href="courses.html" class="new-nav-link">Courses</a>
+            <a href="service.html" class="new-nav-link">Services</a>
+            <a href="blog.html" class="new-nav-link">Blogs</a>
+            <a href="#contact" class="new-nav-link">Contact</a>
+
+            <!-- Mobile Only Dropdown Links -->
+            <div class="new-mobile-only">
+                <hr>
+                <a href="#login" class="new-nav-link">Login / Register</a>
+                <a href="#admin" class="new-nav-link">Admin Dashboard</a>
+                <a href="user-dashboard/dashboard.html" class="new-nav-link">User Dashboard</a>
+            </div>
+        </nav>
+
+        <!-- Right: Actions -->
+        <div class="new-nav-actions">
+            <!-- Mobile Toggles -->
+            <div class="new-mobile-toggles">
+                <button class="new-icon-btn rtl-toggle" aria-label="Toggle RTL">RTL</button>
+                <button class="new-icon-btn theme-toggle" aria-label="Toggle Theme">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
+                <button class="new-menu-toggle" id="menu-toggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+
+            <!-- Desktop Actions -->
+            <div class="new-desktop-actions">
+                <button class="new-icon-btn rtl-toggle desktop-rtl" aria-label="Toggle RTL">RTL</button>
+                <button class="new-icon-btn theme-toggle desktop-theme" aria-label="Toggle Theme">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
+
+                <div class="new-profile-menu">
+                    <button class="new-profile-btn" id="profile-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </button>
+                    <div class="new-dropdown" id="profile-dropdown">
+                        <a href="#login">Login / Register</a>
+                        <a href="#admin">Admin Dashboard</a>
+                        <a href="user-dashboard/dashboard.html">User Dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

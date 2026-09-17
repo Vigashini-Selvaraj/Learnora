@@ -1,0 +1,6 @@
+const footerHTML = `<footer class="new-footer" id="new-footer">
+    <div class="container">
+        <div class="new-footer-grid">
+            <!-- Column 1 -->
+            <div class="new-footer-col">
+                <div style="display: flex;

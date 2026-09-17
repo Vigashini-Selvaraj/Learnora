@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Details | Learnora Student</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Dashboard Styles -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo">
+                <img src="../images/learnora_logo.jpg" alt="Learnora Logo">
+                <div class="logo-text">
+                    <h2>Learnora</h2>
+                    <p>Learn • Practice • Achieve</p>
+                </div>
+            </a>
+        </div>
+        <div class="sidebar-nav">
+            <div class="nav-section">
+                <div class="nav-title">Menu</div>
+                <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-table-columns"></i> Dashboard</a>
+<a href="classes.html" class="nav-item"><i class="fa-solid fa-chalkboard-user"></i> My Classes</a>
+<a href="timetable.html" class="nav-item"><i class="fa-solid fa-calendar-week"></i> Timetable</a>
+<a href="attendance.html" class="nav-item"><i class="fa-solid fa-clipboard-user"></i> Attendance</a>
+<a href="materials.html" class="nav-item"><i class="fa-solid fa-book-open"></i> Study Materials</a>
+<a href="assignments.html" class="nav-item active"><i class="fa-solid fa-file-lines"></i> Assignments</a>
+<a href="tests.html" class="nav-item"><i class="fa-solid fa-file-pen"></i> Tests & Exams</a>
+<a href="progress.html" class="nav-item"><i class="fa-solid fa-chart-line"></i> Progress</a>
+<a href="announcements.html" class="nav-item"><i class="fa-solid fa-bullhorn"></i> Announcements</a>
+
+            </div>
+            <div class="sidebar-footer" style="padding: 24px; border-top: 1px solid rgba(0,0,0,0.05); display: flex; gap: 12px; justify-content: center; margin-top: auto;">
+                <button class="icon-btn rtl-toggle" aria-label="Toggle RTL" style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.1); background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--text); transition: all 0.2s;">
+                    <span class="rtl-text" style="font-size: 0.8rem; font-weight: 600;">RTL</span>
+                </button>
+                <button class="icon-btn theme-toggle" aria-label="Toggle Theme" style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.1); background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--text); transition: all 0.2s;">
+                    <i class="fa-solid fa-moon moon-icon"></i>
+                    <i class="fa-solid fa-sun sun-icon" style="display: none;"></i>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+
+    <div class="main-wrapper">
+
+    <header class="top-header">
+        <div class="header-left">
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <h1 class="page-title">Assignment Details</h1>
+        </div>
+        <div class="header-right">
+            <button class="notification-bell" id="notification-btn">
+                <i class="fa-regular fa-bell"></i>
+                <span class="notification-dot"></span>
+            </button>
+            <div class="dropdown-menu" id="notification-dropdown">
+                <div style="padding: 12px 16px; font-weight: 600; border-bottom: 1px solid rgba(0,0,0,0.05);">Notifications</div>
+                <a href="#" class="dropdown-item" style="flex-direction: column; align-items: flex-start; gap: 4px;">
+                    <span style="font-size: 0.85rem;">New Physics material uploaded</span>
+                    <span style="font-size: 0.75rem; color: var(--secondary-text);">10 min ago</span>
+                </a>
+                <a href="#" class="dropdown-item" style="flex-direction: column; align-items: flex-start; gap: 4px;">
+                    <span style="font-size: 0.85rem;">Mathematics test tomorrow</span>
+                    <span style="font-size: 0.75rem; color: var(--secondary-text);">2 hours ago</span>
+                </a>
+                <div style="padding: 12px 16px; border-top: 1px solid rgba(0,0,0,0.05); text-align: center;">
+                    <a href="#" style="font-size: 0.8rem; color: var(--primary-purple); text-decoration: none;">Mark all as read</a>
+                </div>
+            </div>
+
+            <div class="user-profile" id="user-profile-btn">
+                <img src="https://ui-avatars.com/api/?name=Vigashini+S&background=5B3A8C&color=fff" alt="User Avatar" class="user-avatar">
+                <div class="user-info">
+                    <span class="user-name">Vigashini S.</span>
+                    <span class="user-role">Student</span>
+                </div>
+                <i class="fa-solid fa-chevron-down" style="color: var(--secondary-text); font-size: 0.8rem;"></i>
+            </div>
+            <div class="dropdown-menu" id="profile-dropdown">
+                <a href="profile.html" class="dropdown-item"><i class="fa-regular fa-user"></i> My Profile</a>
+                <a href="settings.html" class="dropdown-item"><i class="fa-solid fa-gear"></i> Settings</a>
+                <a href="#" class="dropdown-item logout-btn" style="color: #EF4444;"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+            </div>
+        </div>
+    </header>
+
+        
+        <main class="main-content">
+
+            <div class="dash-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px;">
+                    <div>
+                        <h2 style="margin: 0 0 8px;">Algebra Worksheet</h2>
+                        <div style="color: var(--secondary-text); font-size: 0.95rem;">Subject: Mathematics • Tutor: Priya Sharma</div>
+                    </div>
+                    <span class="badge badge-pending">Pending</span>
+                </div>
+                
+                <div style="margin-bottom: 24px;">
+                    <h4 style="margin-bottom: 8px;">Instructions:</h4>
+                    <p style="color: var(--secondary-text); line-height: 1.6; margin: 0;">Please complete the attached worksheet containing 20 questions on quadratic equations. Show all your working steps clearly. Submit the scanned PDF document before the deadline.</p>
+                </div>
+                
+                <div style="display: flex; gap: 24px; margin-bottom: 32px;">
+                    <div style="padding: 16px; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; flex: 1;">
+                        <div style="font-size: 0.85rem; color: var(--secondary-text); margin-bottom: 4px;">Due Date</div>
+                        <div style="font-weight: 600;">Sep 18, 2026 11:59 PM</div>
+                    </div>
+                    <div style="padding: 16px; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; flex: 1;">
+                        <div style="font-size: 0.85rem; color: var(--secondary-text); margin-bottom: 4px;">Attachment</div>
+                        <a href="#" style="font-weight: 600; color: var(--primary-purple); text-decoration: none;"><i class="fa-solid fa-file-pdf"></i> algebra_worksheet.pdf</a>
+                    </div>
+                </div>
+
+                <div style="padding: 32px; border: 2px dashed rgba(0,0,0,0.1); border-radius: 12px; text-align: center; background: rgba(0,0,0,0.01);">
+                    <i class="fa-solid fa-cloud-arrow-up" style="font-size: 2.5rem; color: var(--secondary-text); margin-bottom: 16px;"></i>
+                    <h4 style="margin: 0 0 8px;">Upload your submission</h4>
+                    <p style="color: var(--secondary-text); font-size: 0.9rem; margin: 0 0 16px;">Drag and drop your file here, or click to browse</p>
+                    <button class="btn-primary">Browse Files</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- Logout Modal -->
+<div class="modal-overlay" id="logout-modal">
+    <div class="modal-content">
+        <h3>Ready to leave?</h3>
+        <p style="color: var(--secondary-text); margin-bottom: 24px;">Select "Logout" below if you are ready to end your current session.</p>
+        <div style="display: flex; gap: 16px; justify-content: center;">
+            <button class="btn-outline" id="cancel-logout">Cancel</button>
+            <button class="btn-primary" id="confirm-logout">Logout</button>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="js/theme.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/components.js"></script>
+</body>
+</html>

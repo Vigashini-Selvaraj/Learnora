@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Learnora Tutoring Center</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/navbar-footer.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="hero reveal">
+            <div class="hero-bg-shapes"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="eyebrow">OUR COURSES</span>
+                    <h1 class="hero-title">Learning Programs Designed for <span class="highlight">Every Student.</span></h1>
+                    <p class="hero-description">Discover structured courses for foundational learning, board exam preparation, and subject mastery across all grades.</p>
+                </div>
+                <div class="hero-visual">
+                    <div class="image-wrapper">
+                        <img src="assets/images/courses_hero.jpg" alt="Educational course materials" class="hero-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. & 3. Course Categories & Cards -->
+        <section class="section-padding reveal">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Explore Our Programs</h2>
+                </div>
+                
+                <!-- Filters -->
+                <div class="course-filters">
+                    <button class="filter-btn active" data-filter="all">All Courses</button>
+                    <button class="filter-btn" data-filter="6-8">Grades 6–8</button>
+                    <button class="filter-btn" data-filter="9-10">Grades 9–10</button>
+                    <button class="filter-btn" data-filter="11-12">Grades 11–12</button>
+                    <button class="filter-btn" data-filter="exam">Exam Preparation</button>
+                </div>
+
+                <!-- Course Grid -->
+                <div class="courses-grid">
+                    <!-- Course 1 -->
+                    <div class="course-card-rich" data-category="9-10">
+                        <div class="card-badges">
+                            <span class="badge">Grade 10</span>
+                            <span class="badge">Academic</span>
+                        </div>
+                        <h3>Mathematics Mastery</h3>
+                        <p class="course-desc">Build strong fundamentals and problem-solving skills through structured lessons and regular practice.</p>
+                        <div class="course-meta">
+                            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 8 Weeks</div>
+                            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg> 3 Classes/Week</div>
+                            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> Ananya Sharma</div>
+                        </div>
+                        <a href="program.html" class="card-link" style="margin-top: auto;">View Course &rarr;</a>
+                    </div>
+                    
+                    <!-- Course 2 -->
+                    <div class="course-card-rich" data-category="6-8">
+                        <div class="card-badges">
+                            <span class="badge">Grades 6-8</span>
+                            <span class="badge">Foundation</span>
+                        </div>
+                        <h3>Science Exploration</h3>
+                        <p class="course-desc">A fun and interactive foundation course to spark curiosity in Physics, Chemistry, and Biology.</p>
+                        <div class="course-meta">
+                            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 12 Weeks</div>
+                            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg> 2 Classes/Week</div>
+                            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> Rahul Kumar</div>
+                        </div>
+                        <a href="program.html" class="card-link" style="margin-top: auto;">View Course &rarr;</a>
+                    </div>
+                    
+                    <!-- Course 3 -->
+                    <div class="course-card-rich" data-category="11-12">
+                        <div class="card-badges">
+                            <span class="badge">Grade 12</span>
+                            <span class="badge">Advanced</span>
+                        </div>
+                        <h3>Advanced Physics</h3>
+                        <p class="course-desc">Deep dive into mechanics, electromagnetism, and modern physics for board excellence.</p>
+                        <div class="course-meta">
+                            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 16 Weeks</div>
+                            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg> 4 Classes/Week</div>
+                            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> Rahul Kumar</div>
+                        </div>
+                        <a href="program.html" class="card-link" style="margin-top: auto;">View Course &rarr;</a>
+                    </div>
+
+                    <!-- Course 4 -->
+                    <div class="course-card-rich" data-category="exam">
+                        <div class="card-badges">
+                            <span class="badge">All Grades</span>
+                            <span class="badge" style="background: var(--error); color: white;">Exam Prep</span>
+                        </div>
+                        <h3>Intensive Board Revision</h3>
+                        <p class="course-desc">A fast-paced crash course focusing purely on past papers, mock tests, and time management.</p>
+                        <div class="course-meta">
+                            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 4 Weeks</div>
+                            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg> 5 Classes/Week</div>
+                            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> Multiple Tutors</div>
+                        </div>
+                        <a href="program.html" class="card-link" style="margin-top: auto;">View Course &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Featured Courses -->
+        <section class="bg-light section-padding reveal">
+            <div class="container text-center">
+                <h2 class="section-title">Popular Learning Programs</h2>
+                <div class="subjects-grid" style="margin-top: 40px;">
+                    <div class="subject-card">
+                        <div class="card-badges"><span class="badge">Foundation</span></div>
+                        <h3 class="subject-title">Mathematics Foundation</h3>
+                        <p class="subject-desc">Master the basics before stepping up to advanced board exams.</p>
+                    </div>
+                    <div class="subject-card">
+                        <div class="card-badges"><span class="badge">Academic</span></div>
+                        <h3 class="subject-title">Science Excellence</h3>
+                        <p class="subject-desc">Comprehensive syllabus coverage for Grade 9 and 10.</p>
+                    </div>
+                    <div class="subject-card">
+                        <div class="card-badges"><span class="badge">Skill</span></div>
+                        <h3 class="subject-title">English Communication</h3>
+                        <p class="subject-desc">Improve writing, reading, and spoken language skills.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Learning Format -->
+        <section class="section-padding reveal">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">How Our Programs Work</h2>
+                    <p class="section-subtitle">A proven 4-step process integrated into every program.</p>
+                </div>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h3>Learn</h3>
+                        <p>Understand the core concept.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h3>Practice</h3>
+                        <p>Solve guided exercises.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h3>Assess</h3>
+                        <p>Take regular tests.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <h3>Improve</h3>
+                        <p>Track and improve performance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. What's Included -->
+        <section class="bg-light section-padding reveal">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">What's Included in Every Course</h2>
+                </div>
+                <div class="included-grid">
+                    <div class="included-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Live / Interactive Classes</span>
+                    </div>
+                    <div class="included-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Study Materials</span>
+                    </div>
+                    <div class="included-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Practice Worksheets</span>
+                    </div>
+                    <div class="included-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Regular Assessments</span>
+                    </div>
+                    <div class="included-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Attendance Tracking</span>
+                    </div>
+                    <div class="included-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Progress Monitoring</span>
+                    </div>
+                    <div class="included-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Dedicated Tutor Guidance</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Course Comparison / Levels -->
+        <section class="section-padding reveal">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Course Levels Explained</h2>
+                </div>
+                <div class="table-wrapper">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Level</th>
+                                <th>Suitable For</th>
+                                <th>Focus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Foundation</strong></td>
+                                <td>Grades 6–8</td>
+                                <td>Building strong fundamentals</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Academic</strong></td>
+                                <td>Grades 9–10</td>
+                                <td>School & board preparation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Advanced</strong></td>
+                                <td>Grades 11–12</td>
+                                <td>Subject specialization</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Exam Prep</strong></td>
+                                <td>Exam students</td>
+                                <td>Intensive revision and mock tests</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. FAQ -->
+        <section class="bg-light section-padding reveal">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Which grade levels do you support?
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We provide courses for students from Grade 6 to Grade 12, focusing on all major curricula and board exams.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How are students assigned to batches?
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Students are assigned to small batches based on their grade level, preferred subject, and current proficiency to ensure they receive appropriate peer support and personalized attention.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How many classes are conducted each week?
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Typically, a course includes 2 to 4 classes per week. However, our Intensive Exam Prep batches may have up to 5 classes per week.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Are study materials included?
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, comprehensive study materials, worksheets, and past paper booklets are included with every course enrollment.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Can I change my batch?
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, if the timings don't work for you, you can request a batch transfer subject to availability in other groups.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Final CTA -->
+        <section class="final-cta section-padding reveal">
+            <div class="container text-center">
+                <h2 class="cta-title">Find the Right Course for Your Learning Goals</h2>
+                <div class="cta-buttons" style="margin-top: 40px;">
+                    <a href="#" class="btn btn-primary" onclick="window.scrollTo(0,0);">Explore Courses</a>
+                    <a href="#contact" class="btn btn-secondary" style="border-color: rgba(255,255,255,0.4); color: white;">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

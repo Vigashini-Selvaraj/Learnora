@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Learnora</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar-footer.css">
+    <link rel="stylesheet" href="css/pricing.css">
+</head>
+<body>
+    <!-- Navbar Container -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- HERO -->
+        <section class="pricing-hero">
+            <div class="container">
+                <h1 class="pricing-title">Invest in Your Future</h1>
+                <p class="pricing-subtitle">Simple, transparent pricing. Choose the plan that best fits your learning goals and schedule.</p>
+                
+                <div class="billing-toggle">
+                    <span class="toggle-label active" id="label-monthly">Monthly</span>
+                    <div class="toggle-switch" id="billing-switch">
+                        <div class="toggle-circle"></div>
+                    </div>
+                    <span class="toggle-label" id="label-yearly">Yearly <span class="save-badge">Save 20%</span></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING CARDS -->
+        <section class="pricing-section">
+            <div class="container">
+                <div class="pricing-grid">
+                    
+                    <!-- Basic -->
+                    <div class="pricing-card">
+                        <div class="card-header">
+                            <h3 class="tier-name">Basic</h3>
+                            <div class="tier-price">$<span class="price-val" data-monthly="29" data-yearly="24">29</span></div>
+                            <span class="tier-period">per month</span>
+                            <p class="tier-desc" style="margin-top: 15px;">Perfect for self-paced learners who need quality resources.</p>
+                        </div>
+                        <ul class="feature-list">
+                            <li><i class="fa-solid fa-check"></i> Access to 100+ recorded courses</li>
+                            <li><i class="fa-solid fa-check"></i> Basic practice tests</li>
+                            <li><i class="fa-solid fa-check"></i> Community forum access</li>
+                            <li class="disabled"><i class="fa-solid fa-xmark"></i> Live Q&A sessions</li>
+                            <li class="disabled"><i class="fa-solid fa-xmark"></i> 1-on-1 tutoring</li>
+                        </ul>
+                        <a href="#" class="btn btn-secondary">Get Started</a>
+                    </div>
+
+                    <!-- Pro -->
+                    <div class="pricing-card popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="card-header">
+                            <h3 class="tier-name">Pro</h3>
+                            <div class="tier-price">$<span class="price-val" data-monthly="79" data-yearly="64">79</span></div>
+                            <span class="tier-period">per month</span>
+                            <p class="tier-desc" style="margin-top: 15px;">The ideal plan for dedicated students seeking guided learning.</p>
+                        </div>
+                        <ul class="feature-list">
+                            <li><i class="fa-solid fa-check"></i> Everything in Basic</li>
+                            <li><i class="fa-solid fa-check"></i> Weekly live Q&A sessions</li>
+                            <li><i class="fa-solid fa-check"></i> Advanced mock exams with grading</li>
+                            <li><i class="fa-solid fa-check"></i> Email support from tutors</li>
+                            <li class="disabled"><i class="fa-solid fa-xmark"></i> 1-on-1 tutoring</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Choose Pro</a>
+                    </div>
+
+                    <!-- Elite -->
+                    <div class="pricing-card">
+                        <div class="card-header">
+                            <h3 class="tier-name">Elite</h3>
+                            <div class="tier-price">$<span class="price-val" data-monthly="199" data-yearly="159">199</span></div>
+                            <span class="tier-period">per month</span>
+                            <p class="tier-desc" style="margin-top: 15px;">Maximum personalization and direct access to top tutors.</p>
+                        </div>
+                        <ul class="feature-list">
+                            <li><i class="fa-solid fa-check"></i> Everything in Pro</li>
+                            <li><i class="fa-solid fa-check"></i> 4 hours/mo 1-on-1 tutoring</li>
+                            <li><i class="fa-solid fa-check"></i> Personalized study plans</li>
+                            <li><i class="fa-solid fa-check"></i> 24/7 priority chat support</li>
+                            <li><i class="fa-solid fa-check"></i> College admissions guidance</li>
+                        </ul>
+                        <a href="#" class="btn btn-secondary">Get Elite</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPARE TABLE -->
+        <section class="compare-section">
+            <div class="container">
+                <h2 class="section-title text-center" style="margin-bottom: 50px;">Compare Features</h2>
+                <div class="table-wrapper">
+                    <table class="compare-table">
+                        <thead>
+                            <tr>
+                                <th>Features</th>
+                                <th>Basic</th>
+                                <th>Pro</th>
+                                <th>Elite</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Video Library Access</td>
+                                <td><i class="fa-solid fa-check"></i></td>
+                                <td><i class="fa-solid fa-check"></i></td>
+                                <td><i class="fa-solid fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Practice Tests</td>
+                                <td>Basic</td>
+                                <td>Advanced</td>
+                                <td>Unlimited</td>
+                            </tr>
+                            <tr>
+                                <td>Live Group Classes</td>
+                                <td><i class="fa-solid fa-minus"></i></td>
+                                <td><i class="fa-solid fa-check"></i></td>
+                                <td><i class="fa-solid fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Tutor Support</td>
+                                <td><i class="fa-solid fa-minus"></i></td>
+                                <td>Email Only</td>
+                                <td>24/7 Chat</td>
+                            </tr>
+                            <tr>
+                                <td>1-on-1 Private Sessions</td>
+                                <td><i class="fa-solid fa-minus"></i></td>
+                                <td><i class="fa-solid fa-minus"></i></td>
+                                <td><i class="fa-solid fa-check"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <div class="container faq-container">
+                <h2 class="section-title text-center" style="margin-bottom: 50px;">Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I switch plans later? 
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Yes, absolutely. You can upgrade or downgrade your plan at any time from your account settings. If you upgrade, the prorated amount will be charged.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How does the 20% yearly discount work? 
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            When you select yearly billing, you pay upfront for 12 months, which effectively gives you a 20% discount compared to paying month-to-month.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is there a money-back guarantee? 
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Yes! We offer a 14-day no-questions-asked refund policy for all our plans if you feel the platform isn't the right fit for you.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="pricing-cta">
+            <div class="container">
+                <h2>Need a custom solution?</h2>
+                <p>We offer specialized plans for schools, educational institutions, and large groups.</p>
+                <a href="contact.html" class="btn">Contact Sales</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/components.js"></script>
+    
+    <!-- Page Specific Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Billing Toggle Logic
+            const toggleSwitch = document.getElementById('billing-switch');
+            const labelMonthly = document.getElementById('label-monthly');
+            const labelYearly = document.getElementById('label-yearly');
+            const priceElements = document.querySelectorAll('.price-val');
+            const periodElements = document.querySelectorAll('.tier-period');
+
+            let isYearly = false;
+
+            toggleSwitch.addEventListener('click', () => {
+                isYearly = !isYearly;
+                
+                if (isYearly) {
+                    toggleSwitch.classList.add('yearly');
+                    labelYearly.classList.add('active');
+                    labelMonthly.classList.remove('active');
+                    
+                    priceElements.forEach(el => {
+                        el.textContent = el.getAttribute('data-yearly');
+                    });
+                    periodElements.forEach(el => {
+                        el.textContent = 'per month, billed annually';
+                    });
+                } else {
+                    toggleSwitch.classList.remove('yearly');
+                    labelMonthly.classList.add('active');
+                    labelYearly.classList.remove('active');
+                    
+                    priceElements.forEach(el => {
+                        el.textContent = el.getAttribute('data-monthly');
+                    });
+                    periodElements.forEach(el => {
+                        el.textContent = 'per month';
+                    });
+                }
+            });
+
+            // FAQ Accordion Logic
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all others
+                    faqItems.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                    });
+                    
+                    if (!isActive) {
+                        item.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
