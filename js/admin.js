@@ -4,6 +4,19 @@
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Auto-generate data-labels for responsive tables
+    document.querySelectorAll('.admin-table').forEach(table => {
+        const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent.trim());
+        table.querySelectorAll('tbody tr').forEach(row => {
+            Array.from(row.querySelectorAll('td')).forEach((td, index) => {
+                if (headers[index]) {
+                    td.setAttribute('data-label', headers[index]);
+                }
+            });
+        });
+    });
+
     
     // --- Navigation & View Switching ---
     const navItems = document.querySelectorAll('.nav-item[data-view]');

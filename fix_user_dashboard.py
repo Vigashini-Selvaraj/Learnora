@@ -1,38 +1,12 @@
+import os
 
-/* Responsive Overrides */
-@media (max-width: 992px) {
-    .content-grid {
-        grid-template-columns: 1fr;
-    }
-}
+css_path = r'c:\Users\vigas\Desktop\learnora\user-dashboard\css\responsive.css'
+js_path = r'c:\Users\vigas\Desktop\learnora\user-dashboard\js\theme.js'
 
-@media (max-width: 768px) {
-    .sidebar {
-        transform: translateX(-100%);
-    }
-    .sidebar.open {
-        transform: translateX(0);
-    }
-    .main-wrapper {
-        margin-left: 0;
-    }
-    .mobile-menu-btn {
-        display: block;
-    }
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
+with open(css_path, 'r', encoding='utf-8') as f:
+    css_content = f.read()
 
-    [dir="rtl"] .sidebar {
-        transform: translateX(100%);
-    }
-    [dir="rtl"] .sidebar.open {
-        transform: translateX(0);
-    }
-    [dir="rtl"] .main-wrapper {
-        margin-right: 0;
-    }
-
+fixes_css = '''
     /* ========================================================
        User Dashboard Responsive Tables & Containers
        ======================================================== */
@@ -125,5 +99,41 @@
     .timetable td:empty {
         display: none !important;
     }
+'''
 
-}
+# Find the media query block and inject at the end
+last_brace = css_content.rfind('}')
+if last_brace != -1:
+    css_content = css_content[:last_brace] + fixes_css + '\n' + css_content[last_brace:]
+
+with open(css_path, 'w', encoding='utf-8') as f:
+    f.write(css_content)
+
+
+with open(js_path, 'r', encoding='utf-8') as f:
+    js_content = f.read()
+
+js_snippet = '''
+    // Auto-generate data-labels for user dashboard responsive tables
+    document.querySelectorAll('.data-table, .timetable').forEach(table => {
+        const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent.trim());
+        table.querySelectorAll('tbody tr').forEach(row => {
+            Array.from(row.querySelectorAll('td')).forEach((td, index) => {
+                if (headers[index]) {
+                    td.setAttribute('data-label', headers[index]);
+                }
+            });
+        });
+    });
+'''
+
+# Inject the JS after DOMContentLoaded
+dom_loaded_search = "document.addEventListener('DOMContentLoaded', () => {"
+js_idx = js_content.find(dom_loaded_search)
+if js_idx != -1:
+    js_content = js_content[:js_idx + len(dom_loaded_search)] + '\n' + js_snippet + js_content[js_idx + len(dom_loaded_search):]
+
+with open(js_path, 'w', encoding='utf-8') as f:
+    f.write(js_content)
+
+print("User dashboard responsive fixes applied.")
