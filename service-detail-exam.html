@@ -28,6 +28,14 @@
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(31, 38, 135, 0.12);
         }
+        [data-theme="dark"] .premium-card {
+            background: var(--card-bg, rgba(30, 30, 45, 0.9));
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        [data-theme="dark"] .premium-card:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
         
         .roadmap-container {
             display: flex;
