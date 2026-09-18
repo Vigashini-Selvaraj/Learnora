@@ -5,7 +5,7 @@ const headerHTML = `<header class="new-navbar" id="navbar">
             <img src="images/learnora_logo.jpg" alt="Learnora Logo" style="width: 48px; height: 48px; border-radius: 8px; object-fit: contain;">
             <div style="display: flex; flex-direction: column; margin-left: 10px;">
                 <span style="font-weight: 800; font-size: 1.4rem; color: var(--main-text); line-height: 1; letter-spacing: -0.5px;">Learnora</span>
-                <span style="font-size: 0.6rem; color: var(--primary-purple); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px;">Education &amp; Tutoring</span>
+                <span class="logo-subtitle">Education &amp; Tutoring</span>
             </div>
         </a>
 

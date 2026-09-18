@@ -424,7 +424,8 @@ img {
   border-radius: 20px;
 }
 [data-theme="dark"] .badge {
-  background-color: rgba(91, 58, 140, 0.2);
+  background-color: rgba(181, 158, 224, 0.15);
+  color: #b59ee0; /* Lighter purple for dark mode contrast */
 }
 .subject-title {
   font-size: 1.5rem;
@@ -441,8 +442,16 @@ img {
   display: inline-flex;
   align-items: center;
   margin-top: auto;
+  color: var(--primary-purple);
+  transition: color 0.2s ease;
 }
 .card-link:hover {
+  color: var(--warm-yellow);
+}
+[data-theme="dark"] .card-link {
+  color: #b59ee0;
+}
+[data-theme="dark"] .card-link:hover {
   color: var(--warm-yellow);
 }
 [dir="rtl"] .card-link {
@@ -1717,4 +1726,20 @@ img {
     .badge-1 {
         bottom: -20px; left: 20px; right: 20px; width: calc(100% - 40px); justify-content: center;
     }
+}
+
+
+/* Logo Subtitle Styling */
+.logo-subtitle {
+  font-size: 0.6rem;
+  color: var(--primary-purple);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+  transition: color 0.2s ease;
+}
+
+[data-theme="dark"] .logo-subtitle {
+  color: #b59ee0; /* Lighter purple for dark mode contrast */
 }

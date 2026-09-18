@@ -649,20 +649,27 @@ function initializeFAQ() {
             if (!answer) {
                 return;
             }
+            
+            const isActive = item.classList.contains("active");
+
+            // Close all others
+            document.querySelectorAll(".faq-item").forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove("active");
+                    const otherAnswer = otherItem.querySelector(".faq-answer");
+                    if (otherAnswer) {
+                        otherAnswer.style.maxHeight = "0";
+                    }
+                }
+            });
 
 
-            item.classList.toggle("active");
-
-
-            if (item.classList.contains("active")) {
-
-                answer.style.maxHeight =
-                    answer.scrollHeight + "px";
-
+            if (!isActive) {
+                item.classList.add("active");
+                answer.style.maxHeight = answer.scrollHeight + "px";
             } else {
-
+                item.classList.remove("active");
                 answer.style.maxHeight = "0";
-
             }
 
         });
