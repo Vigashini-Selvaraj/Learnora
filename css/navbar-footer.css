@@ -30,10 +30,30 @@
     font-weight: 500;
     padding: 8px 16px;
     border-radius: 8px;
+    position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
-.new-nav-link:hover {
+
+.new-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-purple);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.new-nav-link:hover, .new-nav-link.active {
     color: var(--primary-purple);
     background-color: rgba(91, 58, 140, 0.05);
+}
+
+.new-nav-link:hover::after, .new-nav-link.active::after {
+    width: calc(100% - 32px);
 }
 .new-nav-actions {
     display: flex;
